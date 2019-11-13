@@ -36,12 +36,27 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         switch (menuItem.getItemId()){
             case R.id.homeDrawerItemId:
+                setTitle("Home");
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new HomeFragment()).commit();
                 break;
+            case R.id.tripsDrawerItemId:
+                setTitle("Trips");
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new TripsFragment()).commit();
+                break;
+            case R.id.memoriesDrawerItemId:
+                setTitle("Memories");
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new MemoriesFragment()).commit();
+                break;
+            case R.id.walletDrawerItemId:
+                setTitle("Wallet");
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new WalletFragment()).commit();
+                break;
             case R.id.nearbyPlacesDrawerItemId:
+                setTitle("Nearby Places");
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new NearbyPlacesFragment()).commit();
                 break;
             case R.id.weatherDrawerItemId:
+                setTitle("Weather");
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new WeatherFragment()).commit();
                 break;
         }

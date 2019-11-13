@@ -9,6 +9,18 @@
             android:id="@+id/homeDrawerItemId"
             android:icon="@drawable/ic_home_black_24dp"></item>
         <item
+            android:title="Trips"
+            android:id="@+id/tripsDrawerItemId"
+            android:icon="@drawable/ic_directions_bus_black_24dp"></item>
+        <item
+            android:title="Memories"
+            android:id="@+id/memoriesDrawerItemId"
+            android:icon="@drawable/ic_camera_alt_black_24dp"></item>
+        <item
+            android:title="Wallet"
+            android:id="@+id/walletDrawerItemId"
+            android:icon="@drawable/ic_account_balance_wallet_black_24dp"></item>
+        <item
             android:title="Nearby Places"
             android:id="@+id/nearbyPlacesDrawerItemId"
             android:icon="@drawable/ic_my_location_black_24dp"></item>
