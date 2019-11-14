@@ -9,21 +9,24 @@ import android.widget.EditText;
 public class LoginActivity extends AppCompatActivity {
     private EditText emailET, passwordET;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        this.setTitle("Sign Up");
+
 
         init();
     }
 
     private void init() {
         emailET = findViewById(R.id.emailETId);
-        passwordET= findViewById(R.id.passwordeETId);
+        passwordET = findViewById(R.id.passwordeETId);
     }
 
+
     public void singup(View view) {
+
 
     }
 }
