@@ -3,6 +3,7 @@ package com.example.tourmate;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 
 public class SignUpActivity extends AppCompatActivity {
 
@@ -13,5 +14,8 @@ public class SignUpActivity extends AppCompatActivity {
         this.setTitle("Sign In");
 
 
+    }
+
+    public void singup(View view) {
     }
 }

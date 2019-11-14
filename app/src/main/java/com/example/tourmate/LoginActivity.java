@@ -2,6 +2,7 @@ package com.example.tourmate;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -26,7 +27,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
     public void singup(View view) {
-
-
+        Intent intent = new Intent(LoginActivity.this, SignUpActivity.class);
+        startActivity(intent);
     }
 }
