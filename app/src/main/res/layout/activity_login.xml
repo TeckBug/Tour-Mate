@@ -24,6 +24,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Email"
+        android:textColor="#FFFFFF"
         android:textAllCaps="true"
         android:textAlignment="center"
         android:textSize="12sp"
@@ -44,6 +45,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Password"
+        android:textColor="#FFFFFF"
         android:textAllCaps="true"
         android:textAlignment="center"
         android:textSize="12sp"
@@ -91,6 +93,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/haveyouaccount"
+        android:textColor="#FFFFFF"
         android:layout_gravity="center_horizontal"
         android:textSize="18sp"
         />
