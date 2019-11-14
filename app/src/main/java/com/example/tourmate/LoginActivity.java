@@ -14,7 +14,7 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        this.setTitle("Sign Up");
+        this.setTitle("Sign In");
 
 
         init();
@@ -26,7 +26,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
 
-    public void singup(View view) {
+    public void singin(View view) {
         Intent intent = new Intent(LoginActivity.this, SignUpActivity.class);
         startActivity(intent);
     }

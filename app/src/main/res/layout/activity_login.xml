@@ -84,7 +84,7 @@
             android:layout_height="wrap_content"
             android:text="@string/singUp"
             android:layout_gravity="center_horizontal"
-            android:onClick="singup"
+            android:onClick="singin"
             android:layout_marginTop="7dp"
             android:textColor="@color/colorAccent"
             android:textSize="18sp"
