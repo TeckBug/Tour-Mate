@@ -20,6 +20,14 @@
         android:src="@drawable/login"
         />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Email"
+        android:textAllCaps="true"
+        android:textAlignment="center"
+        android:textSize="12sp"
+        />
 
 
 <EditText
@@ -32,6 +40,14 @@
         android:inputType="text"
         android:textAlignment="center"
         android:hint="Email"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Password"
+        android:textAllCaps="true"
+        android:textAlignment="center"
+        android:textSize="12sp"
+        />
 
     <EditText
         android:id="@+id/passwordeETId"
@@ -91,10 +107,5 @@
             />
 
     </LinearLayout>
-
-
-
-
-
 
 </LinearLayout>
