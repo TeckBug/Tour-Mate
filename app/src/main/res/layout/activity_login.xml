@@ -37,7 +37,7 @@
         android:layout_marginBottom="20dp"
         android:drawableLeft="@drawable/ic_email_black_24dp"
         android:textColor="#FFFFFF"
-        android:inputType="text"
+        android:inputType="textPassword"
         android:textAlignment="center"
         android:hint="Email"/>
     <TextView
@@ -58,7 +58,7 @@
         android:textColor="#FFFFFF"
         android:textAlignment="center"
         android:hint="Password"
-        android:inputType="text"/>
+        android:inputType="textPassword"/>
 
 
 
