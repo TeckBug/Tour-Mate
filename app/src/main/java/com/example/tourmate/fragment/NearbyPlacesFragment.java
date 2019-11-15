@@ -1,4 +1,4 @@
-package com.example.tourmate;
+package com.example.tourmate.fragment;
 
 
 import android.os.Bundle;
@@ -9,16 +9,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class WalletFragment extends Fragment {
+import com.example.tourmate.R;
 
-    public WalletFragment() {
+public class NearbyPlacesFragment extends Fragment {
+
+    public NearbyPlacesFragment() {
         // Required empty public constructor
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_wallet, container, false);
+        return inflater.inflate(R.layout.fragment_nearby_places, container, false);
     }
 
 }

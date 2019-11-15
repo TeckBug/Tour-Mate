@@ -1,4 +1,4 @@
-package com.example.tourmate;
+package com.example.tourmate.activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -9,10 +9,16 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.os.Bundle;
 import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.example.tourmate.R;
+import com.example.tourmate.fragment.HomeFragment;
+import com.example.tourmate.fragment.MemoriesFragment;
+import com.example.tourmate.fragment.NearbyPlacesFragment;
+import com.example.tourmate.fragment.TripsFragment;
+import com.example.tourmate.fragment.WalletFragment;
+import com.example.tourmate.fragment.WeatherFragment;
 import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
