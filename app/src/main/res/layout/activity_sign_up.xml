@@ -97,7 +97,7 @@
         android:layout_gravity="center"
         android:shadowColor="#A8A8A8"
         android:layout_marginTop="5dp"
-        android:layout_marginBottom="3dp"
+        android:layout_marginBottom="5dp"
         android:shadowDx="0"
         android:shadowDy="0"
         android:shadowRadius="5"
@@ -115,7 +115,7 @@
         android:text="@string/bycreating"
         android:textColor="#FFFFFF"
         android:textAlignment="center"
-        android:textSize="9sp"
+        android:textSize="11sp"
         />
     </LinearLayout>
 
@@ -132,7 +132,7 @@
         android:layout_height="wrap_content"
         android:text="@string/alreadyAccount"
         android:textColor="#FFFFFF"
-        android:textSize="9sp"
+        android:textSize="11sp"
         />
 
     <TextView
@@ -141,7 +141,7 @@
         android:text="@string/singIn"
         android:onClick="singup"
         android:textColor="@color/colorAccent"
-        android:textSize="11sp"
+        android:textSize="13sp"
         />
 
 
