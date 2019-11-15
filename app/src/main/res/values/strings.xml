@@ -12,6 +12,6 @@
 
 
     <string name="alreadyAccount"><b>Already have an account?</b> </string>
-    <string name="singIp"><u> Sing In</u></string>
+    <string name="singIn"><u> Sing In</u></string>
 
 </resources>
