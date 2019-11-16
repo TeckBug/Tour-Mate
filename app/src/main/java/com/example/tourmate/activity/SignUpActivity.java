@@ -68,7 +68,7 @@ public class SignUpActivity extends AppCompatActivity {
 
                     if (email.matches(emailPattern))
                     {
-                        if(password.length() == 6) {
+                        if(password.length() <= 6) {
 
                             signUp(name, email, password, conformPassword);
 
@@ -114,9 +114,9 @@ public class SignUpActivity extends AppCompatActivity {
                     reference.setValue(userinfo).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
-                            if (task.isSuccessful()){
-                             //   startActivity(new Intent(SignUpActivity.this, LoginActivity.class));
-                            }else {
+                            if (task.isSuccessful()) {
+                                startActivity(new Intent(SignUpActivity.this, LoginActivity.class));
+                            } else {
                                 Toast.makeText(SignUpActivity.this, "Something Went Wrong", Toast.LENGTH_SHORT).show();
                             }
                         }
