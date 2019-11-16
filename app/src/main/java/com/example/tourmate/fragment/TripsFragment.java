@@ -10,6 +10,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.tourmate.R;
+import com.example.tourmate.activity.AddTripActivity;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class TripsFragment extends Fragment {
@@ -37,7 +39,7 @@ public class TripsFragment extends Fragment {
     }
 
     private void gotoAddTripActivity(View v) {
-        Intent intent=new Intent(getContext(),AddTripActivity.class);
+        Intent intent=new Intent(getContext(), AddTripActivity.class);
         startActivity(intent);
     }
 
