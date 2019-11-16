@@ -1,4 +1,4 @@
-package com.example.tourmate;
+package com.example.tourmate.fragment;
 
 
 import android.content.Intent;

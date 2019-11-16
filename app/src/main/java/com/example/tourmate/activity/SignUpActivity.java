@@ -1,4 +1,4 @@
-package com.example.tourmate;
+package com.example.tourmate.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,9 +11,9 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.tourmate.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -43,11 +43,11 @@ public class SignUpActivity extends AppCompatActivity {
         signUpBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 name= nameEt.getText().toString().trim();
                 email = emailEt.getText().toString().trim();
                 password = passwordEt.getText().toString().trim();
                 conformPassword = comformPasswrodEt.toString().trim();
-
 
                 if(name.isEmpty()){
 
@@ -68,19 +68,14 @@ public class SignUpActivity extends AppCompatActivity {
 
                     if (email.matches(emailPattern))
                     {
-                        if(password.equals(conformPassword)){
+                        if(password.length() == 6) {
 
-                            if(password.length() == 6){
-
-                                signUp(name,email,password,conformPassword);
-
-                            }else {
-                                Toast.makeText(SignUpActivity.this,"password length should be 6 character",Toast.LENGTH_SHORT).show();
-                            }
+                            signUp(name, email, password, conformPassword);
 
                         }else {
-                            Toast.makeText(SignUpActivity.this,"password did not match",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(SignUpActivity.this,"password length should be 6 character",Toast.LENGTH_SHORT).show();
                         }
+
 
                     } else {
                         Toast.makeText(getApplicationContext(),"Invalid email address", Toast.LENGTH_SHORT).show();
@@ -89,6 +84,7 @@ public class SignUpActivity extends AppCompatActivity {
                 }
 
             }
+
         });
 
 
@@ -119,7 +115,7 @@ public class SignUpActivity extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
                             if (task.isSuccessful()){
-                                startActivity(new Intent(SignUpActivity.this, LoginActivity.class));
+                             //   startActivity(new Intent(SignUpActivity.this, LoginActivity.class));
                             }else {
                                 Toast.makeText(SignUpActivity.this, "Something Went Wrong", Toast.LENGTH_SHORT).show();
                             }
