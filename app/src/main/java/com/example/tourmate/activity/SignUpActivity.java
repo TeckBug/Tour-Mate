@@ -25,7 +25,7 @@ import java.util.HashMap;
 public class SignUpActivity extends AppCompatActivity {
     private EditText nameEt, emailEt, passwordEt, comformPasswrodEt;
     private Button signUpBtn;
-    private String name,email, password,conformPassword;
+    private String name,email, password,confirmPassword;
     private FirebaseAuth firebaseAuth;
     private DatabaseReference databaseReference;
 
@@ -47,7 +47,7 @@ public class SignUpActivity extends AppCompatActivity {
                 name= nameEt.getText().toString().trim();
                 email = emailEt.getText().toString().trim();
                 password = passwordEt.getText().toString().trim();
-                conformPassword = comformPasswrodEt.toString().trim();
+                confirmPassword = comformPasswrodEt.toString().trim();
 
                 if(name.isEmpty()){
 
@@ -59,21 +59,20 @@ public class SignUpActivity extends AppCompatActivity {
 
                 }else if (password.isEmpty()){
                     Toast.makeText(SignUpActivity.this, "Password Empty !", Toast.LENGTH_SHORT).show();
-                }else if (conformPassword.isEmpty()){
+                }else if (confirmPassword.isEmpty()){
                     Toast.makeText(SignUpActivity.this, "Conform Password Empty !", Toast.LENGTH_SHORT).show();
                 }
 
                 else {
                     String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
 
-                    if (email.matches(emailPattern))
-                    {
-                        if(password.length() <= 6) {
+                    if (email.matches(emailPattern)) {
+                        if (password.length() == 6) {
 
-                            signUp(name, email, password, conformPassword);
+                            signUp(name, email, password, confirmPassword);
 
-                        }else {
-                            Toast.makeText(SignUpActivity.this,"password length should be 6 character",Toast.LENGTH_SHORT).show();
+                        } else {
+                            Toast.makeText(SignUpActivity.this, "password length should be 6 character", Toast.LENGTH_SHORT).show();
                         }
 
 
@@ -98,7 +97,7 @@ public class SignUpActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    private void signUp(final String name, final String email, String password, String conformPassword) {
+    private void signUp(final String name, final String email, String password, String confoirmPassword ) {
 
 
         firebaseAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(this,new OnCompleteListener<AuthResult>() {
