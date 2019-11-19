@@ -87,6 +87,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawerLayout.addDrawerListener(toggle);
+        toggle.getDrawerArrowDrawable().setColor(getResources().getColor(R.color.colorWhite));
+
         toggle.syncState();
 
         navigationView = findViewById(R.id.navigationViewId);

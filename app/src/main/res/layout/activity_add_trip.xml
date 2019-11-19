@@ -8,13 +8,18 @@
     android:orientation="vertical"
     tools:context=".activity.AddTripActivity">
 
-    <androidx.appcompat.widget.Toolbar
+    <pl.droidsonroids.gif.GifImageView
         android:layout_width="match_parent"
-        android:layout_height="250dp"
+        android:layout_height="176dp"
+        android:id="@+id/dashboardImaveView"
         android:fitsSystemWindows="true"
-        android:background="@drawable/addtripbackground"
-        android:theme="@style/AppTheme.AppBarOverlay">
-    </androidx.appcompat.widget.Toolbar>
+        android:theme="@style/ThemeOverlay.AppCompat"
+        android:background="@drawable/source">
+
+
+    </pl.droidsonroids.gif.GifImageView>
+
+
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -105,10 +110,10 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:id="@+id/tripStartDateEt"
-                    android:clickable="false"
                     android:backgroundTint="@color/colorPrimary"
                     android:singleLine="true"
-                    android:inputType="text"
+                    android:inputType="date"
+                    android:focusable="false"
                     android:drawableRight="@drawable/ic_date_range_black_24dp"
                     android:layout_height="wrap_content"/>
 
@@ -123,6 +128,7 @@
                 android:background="#ffffff"
                 android:layout_weight=".5"
                 android:layout_marginLeft="10dp"
+
                 app:theme="@style/MyStyle"
                 android:textColorHint="@color/colorPrimary"
                 android:layout_marginRight="10dp"
@@ -131,10 +137,11 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:id="@+id/tripEndDateEt"
-                    android:clickable="false"
+                    android:editable="false"
+                    android:focusable="false"
                     android:backgroundTint="@color/colorPrimary"
                     android:singleLine="true"
-                    android:inputType="text"
+                    android:inputType="date"
                     android:drawableRight="@drawable/ic_date_range_black_24dp"
                     android:layout_height="wrap_content"/>
 
@@ -152,6 +159,7 @@
                 android:textColorHint="@color/colorPrimary"
                 android:layout_marginRight="10dp"
                 android:background="#ffffff"
+                android:clickable="false"
                 android:layout_height="80dp">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -159,7 +167,10 @@
                     android:id="@+id/tripBudgetEt"
                     android:backgroundTint="@color/colorPrimary"
                     android:singleLine="true"
+                    android:editable="false"
+                    android:focusable="false"
                     android:inputType="number"
+
                     android:drawableRight="@drawable/ic_attach_money_black_24dp"
                     android:layout_height="wrap_content"/>
 
