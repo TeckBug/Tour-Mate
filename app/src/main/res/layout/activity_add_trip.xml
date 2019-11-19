@@ -159,7 +159,7 @@
                 android:textColorHint="@color/colorPrimary"
                 android:layout_marginRight="10dp"
                 android:background="#ffffff"
-                android:clickable="false"
+
                 android:layout_height="80dp">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -167,8 +167,7 @@
                     android:id="@+id/tripBudgetEt"
                     android:backgroundTint="@color/colorPrimary"
                     android:singleLine="true"
-                    android:editable="false"
-                    android:focusable="false"
+
                     android:inputType="number"
 
                     android:drawableRight="@drawable/ic_attach_money_black_24dp"

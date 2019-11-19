@@ -21,6 +21,7 @@ import android.widget.Toast;
 import com.example.tourmate.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -180,7 +181,7 @@ public class AddTripActivity extends AppCompatActivity {
             tripNameEt.setError(null);
         }
         if(tripName.length()<4 && tripName.length()>20){
-            tripNameEt.setError("Trip name must be upper than 4 letter and lower than 20 letter");
+            tripNameEt.setError("This filed must be upper than 4 letter and lower than 20 letter");
             valid=false;
         }else{
             tripNameEt.setError(null);
