@@ -41,13 +41,12 @@
             android:orientation="vertical">
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
-                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
                 android:hint="Trip Name"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
+                android:id="@+id/tn"
 
-                app:boxBackgroundColor="@color/colorPrimary"
-                android:background="#ffffff"
+
                 android:textColorHint="@color/colorPrimary"
                 android:layout_weight="1"
                 app:theme="@style/MyStyle"
@@ -57,10 +56,12 @@
                     android:layout_width="match_parent"
 
                     android:inputType="text"
-                    android:backgroundTint="@color/colorPrimary"
+
                     android:drawableRight="@drawable/ic_airport_shuttle_black_24dp"
                     android:id="@+id/tripNameEt"
+                    android:layout_marginRight="5dp"
                     android:singleLine="true"
+
                     android:textColorHint="@color/colorPrimary"
 
                     android:layout_height="wrap_content"/>
@@ -79,6 +80,7 @@
                 android:layout_marginLeft="10dp"
                 android:textColorHint="@color/colorPrimary"
                 android:layout_marginRight="10dp"
+                android:id="@+id/td"
                 android:backgroundTint="#ffffff"
                 android:layout_height="140dp">
 
@@ -103,6 +105,7 @@
                 android:layout_weight="1"
                 app:theme="@style/MyStyle"
                 android:layout_marginLeft="10dp"
+                android:id="@+id/sd"
                 android:layout_marginRight="10dp"
                 android:textColorHint="@color/colorPrimary"
                 android:layout_height="80dp">
@@ -127,6 +130,7 @@
                 android:hint="End Date"
                 android:background="#ffffff"
                 android:layout_weight=".5"
+                android:id="@+id/ed"
                 android:layout_marginLeft="10dp"
 
                 app:theme="@style/MyStyle"
@@ -154,6 +158,7 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
                 android:hint="Trip Budget"
                 android:layout_weight=".5"
+                android:id="@+id/bg"
                 android:layout_marginLeft="10dp"
                 app:theme="@style/MyStyle"
                 android:textColorHint="@color/colorPrimary"
@@ -167,9 +172,7 @@
                     android:id="@+id/tripBudgetEt"
                     android:backgroundTint="@color/colorPrimary"
                     android:singleLine="true"
-
-                    android:inputType="number"
-
+                    android:inputType="numberDecimal"
                     android:drawableRight="@drawable/ic_attach_money_black_24dp"
                     android:layout_height="wrap_content"/>
 

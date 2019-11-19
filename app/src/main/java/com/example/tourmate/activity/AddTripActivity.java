@@ -10,6 +10,7 @@ import androidx.fragment.app.FragmentTransaction;
 import android.app.ActionBar;
 import android.app.DatePickerDialog;
 import android.content.Intent;
+import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -22,9 +23,11 @@ import com.example.tourmate.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.internal.Util;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -38,7 +41,7 @@ public class AddTripActivity extends AppCompatActivity {
     private Button addTripBtn;
 
     private String tripName,tripDescription,tripStartDate,tripEndDate;
-    private int tripBudget;
+    private String tripBudget;
 
     private DatabaseReference tripRef;
     private FirebaseAuth mAuth;
@@ -167,25 +170,49 @@ public class AddTripActivity extends AppCompatActivity {
 
     private boolean getData() {
         tripName=tripNameEt.getText().toString().trim();
-        tripDescription=tripDescriptionEt.getText().toString();
-        tripStartDate=tripStartDateEt.getText().toString();
-        tripEndDate=tripEndDateEt.getText().toString();
-        tripBudget=Integer.valueOf(tripBudgetEt.getText().toString());
+        tripDescription=tripDescriptionEt.getText().toString().trim();
+        tripStartDate=tripStartDateEt.getText().toString().trim();
+        tripEndDate=tripEndDateEt.getText().toString().trim();
+        tripBudget=tripBudgetEt.getText().toString().trim();
 
         boolean valid=true;
-        if(tripName.isEmpty()){
+        if(tripName.equals("")){
             tripNameEt.setError("This field is required");
             valid=false;
         }
         else{
             tripNameEt.setError(null);
         }
-        if(tripName.length()<4 && tripName.length()>20){
-            tripNameEt.setError("This filed must be upper than 4 letter and lower than 20 letter");
+
+        if(tripDescription.length()<3){
+            tripDescriptionEt.setError("at least 3 characters");
             valid=false;
         }else{
-            tripNameEt.setError(null);
+            tripDescriptionEt.setError(null);
         }
+        if(tripBudget.isEmpty()){
+            tripBudgetEt.setError("This field is required");
+            valid=false;
+        }
+        else{
+            tripBudgetEt.setError(null);
+        }
+        if(tripStartDate.isEmpty()){
+            tripStartDateEt.setError("Start date required");
+            valid=false;
+        }else{
+            tripStartDateEt.setError(null);
+        }
+        if(tripEndDate.isEmpty()){
+            tripEndDateEt.setError("Start date required");
+            valid=false;
+        }else{
+            tripEndDateEt.setError(null);
+        }
+
+
+
+
 
 
         return valid;
@@ -198,6 +225,8 @@ public class AddTripActivity extends AppCompatActivity {
         tripEndDateEt=findViewById(R.id.tripEndDateEt);
         tripBudgetEt=findViewById(R.id.tripBudgetEt);
         addTripBtn=findViewById(R.id.addTripBtn);
+
+
 
         mAuth=FirebaseAuth.getInstance();
     }
