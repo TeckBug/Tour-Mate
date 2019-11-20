@@ -9,6 +9,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.app.ActionBar;
 import android.app.DatePickerDialog;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
@@ -20,6 +21,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.tourmate.R;
+import com.example.tourmate.fragment.TripsFragment;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
@@ -83,6 +85,12 @@ public class AddTripActivity extends AppCompatActivity {
 
                 if(isValid==true){
 
+                    final ProgressDialog progressDialog = new ProgressDialog(AddTripActivity.this,R.style.MyProgressDialogue);
+                    progressDialog.setTitle("Adding Trip");
+                    progressDialog.setMessage("Please wait...");
+                    progressDialog.setCanceledOnTouchOutside(false);
+                    progressDialog.show();
+
                     current_user_id=mAuth.getCurrentUser().getUid();
                     tripRef=FirebaseDatabase.getInstance().getReference().child("Trip");
                     HashMap<String,Object> trip=new HashMap<>();
@@ -96,7 +104,9 @@ public class AddTripActivity extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
                             if(task.isSuccessful()){
+                                progressDialog.dismiss();
                                 Toast.makeText(AddTripActivity.this, "Trip added successfully", Toast.LENGTH_SHORT).show();
+                                gotoTripFragment();
                             }
                             else{
                                 String message=task.getException().getMessage();
@@ -117,6 +127,12 @@ public class AddTripActivity extends AppCompatActivity {
 
 
 
+    }
+
+    private void gotoTripFragment() {
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        ft.replace(R.id.container, new TripsFragment());
+        ft.commit();
     }
 
     private void openDatepicker(int flag) {
