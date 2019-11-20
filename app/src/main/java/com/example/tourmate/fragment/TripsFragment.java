@@ -27,13 +27,12 @@ public class TripsFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_trips, container, false);
         init(view);
+
         tripFloatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                gotoAddTripActivity(v);
+            public void onClick(View v) { gotoAddTripActivity(v);
             }
         });
-
 
         return view;
     }
