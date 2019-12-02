@@ -6,6 +6,15 @@
     <color name="colorWhite">#ffffff</color>
 
 
+    <color name="mainColor">#6699CC</color>
+    <color name="white">#FFFFFF</color>
+    <color name="maincolor2">#2196F3</color>
+    <color name="darkRed">#B22222</color>
+    <color name="Red">#DC143C</color>
+    <color name="blue">#4169E1</color>
+    <color name="blue1">#E24A71E4</color>
+
+
 
 
 </resources>

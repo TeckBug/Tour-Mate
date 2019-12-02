@@ -15,7 +15,6 @@
     <string name="singIn"><u> Sing In</u></string>
 
 
-
     <string name="input_error_name">Name Empty !</string>
     <string name="input_error_email">Email Empty !</string>
     <string name="input_error_password">Password Empty !</string>
@@ -24,9 +23,6 @@
     <string name="input_error_image">Please select an Image !</string>
     <string name="input_error_not_match">password not match !</string>
     <string name="input_error_not_email">Invalid Email address !</string>
-
-
-
 
 
 </resources>

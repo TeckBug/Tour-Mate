@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:background="@color/mainColor"
+    tools:context=".activity.splashActivity">
+
+    <TextView
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:text="Tour mate"
+        android:textStyle="italic"
+        android:textSize="50sp"
+        android:textColor="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ProgressBar
+            android:id="@+id/splashProgressBar"
+            android:progressTint="#13E11C"
+            android:progressBackgroundTint="@android:color/white"
+            android:layout_margin="40dp"
+            android:layout_marginBottom="50dp"
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            style="@android:style/Widget.ProgressBar.Horizontal"/>
+    </RelativeLayout>
+
+</FrameLayout>

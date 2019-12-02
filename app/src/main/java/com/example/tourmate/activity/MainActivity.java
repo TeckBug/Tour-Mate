@@ -6,7 +6,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.Fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -20,6 +22,7 @@ import com.example.tourmate.fragment.TripsFragment;
 import com.example.tourmate.fragment.WalletFragment;
 import com.example.tourmate.fragment.WeatherFragment;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
@@ -27,6 +30,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private Toolbar toolbar;
     private ActionBarDrawerToggle toggle;
     private NavigationView navigationView;
+    private FirebaseAuth firebaseAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,6 +69,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 setTitle("Weather");
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new WeatherFragment()).commit();
                 break;
+
+            case R.id.action_logout:
+                logoutUser();
+                break;
         }
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
@@ -81,6 +89,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     private void init() {
         drawerLayout = findViewById(R.id.drawerLayoutId);
+        firebaseAuth = FirebaseAuth.getInstance();
 
         toolbar = findViewById(R.id.toolbarId);
         setSupportActionBar(toolbar);
@@ -111,7 +120,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.aboutMenuItemId:
                 Toast.makeText(this, ""+item.getTitle(), Toast.LENGTH_SHORT).show();
                 break;
+
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    private void logoutUser() {
+        firebaseAuth.signOut();
+        startActivity(new Intent(this,LoginActivity.class));
     }
 }
