@@ -22,6 +22,8 @@
     <string name="input_error_conformPassword">Conform Password Empty !</string>
     <string name="input_error_More6Characters">password would be upto 6 characters !</string>
     <string name="input_error_image">Please select an Image !</string>
+    <string name="input_error_not_match">password not match !</string>
+    <string name="input_error_not_email">Invalid Email address !</string>
 
 
 

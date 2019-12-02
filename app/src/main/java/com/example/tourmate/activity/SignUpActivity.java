@@ -37,7 +37,7 @@ public class SignUpActivity extends AppCompatActivity {
     private EditText nameEt, emailEt, passwordEt, comformPasswrodEt;
     private Button signUpBtn;
     private StorageReference postimagesreference;
-    private String savecurrentdate,savecurrenttime, name, email, password, confirmPassword, postrandomname, downloadurl, currentuser;
+    private String savecurrentdate, savecurrenttime, name, email, password, confirmPassword, postrandomname, downloadurl, currentuser;
     private String imageUrl;
     private FirebaseAuth firebaseAuth;
     private ImageView imageView;
@@ -67,7 +67,7 @@ public class SignUpActivity extends AppCompatActivity {
                 name = nameEt.getText().toString().trim();
                 email = emailEt.getText().toString().trim();
                 password = passwordEt.getText().toString().trim();
-                confirmPassword = comformPasswrodEt.toString().trim();
+                confirmPassword = comformPasswrodEt.getText().toString().trim();
 
                 Calendar callForDate = Calendar.getInstance();
                 SimpleDateFormat currentdate = new SimpleDateFormat("dd-MMM-yyyy");
@@ -78,7 +78,6 @@ public class SignUpActivity extends AppCompatActivity {
                 savecurrenttime = currenttime.format(callForDate.getTime());
 
                 postrandomname = savecurrentdate + savecurrenttime;
-
 
 
                 if (name.isEmpty()) {
@@ -99,15 +98,14 @@ public class SignUpActivity extends AppCompatActivity {
                     comformPasswrodEt.requestFocus();
                     return;
                 } else if (password.length() < 6) {
-
-
-                    Toast.makeText(SignUpActivity.this, R.string.input_error_More6Characters, Toast.LENGTH_SHORT).show();
+                    passwordEt.setError(getString(R.string.input_error_More6Characters));
+                    passwordEt.requestFocus();
                     return;
                 } else if (ImageUri == null) {
                     Toast.makeText(SignUpActivity.this, R.string.input_error_image, Toast.LENGTH_SHORT).show();
                     return;
                 } else if (emailEt.getText().toString().trim().matches(emailPattern)) {
-                   /* if (confirmPassword.contains(password)) {*/
+                    if (password.equals(confirmPassword)) {
 
                         loadinbar.setTitle("SignUp");
                         loadinbar.setMessage("Signing up");
@@ -131,23 +129,20 @@ public class SignUpActivity extends AppCompatActivity {
                                     });
 
 
-
                                 }
                             }
                         });
-                   /* }
-                    else {
+                    } else {
+                        comformPasswrodEt.setError(getString(R.string.input_error_not_match));
+                        comformPasswrodEt.requestFocus();
+                        return;
+                    }
+                } else {
+                    emailEt.setError(getString(R.string.input_error_not_email));
+                    emailEt.requestFocus();
+                    return;
 
-                        Toast.makeText(SignUpActivity.this, "password not match", Toast.LENGTH_SHORT).show();
-                    }*/
                 }
-
-                else {
-                    Toast.makeText(SignUpActivity.this, "Invalid Email address", Toast.LENGTH_SHORT).show();
-                }
-
-
-
 
 
             }
