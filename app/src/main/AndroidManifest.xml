@@ -13,7 +13,7 @@
             ></activity>
         <activity android:name=".activity.SignUpActivity" />
         <activity
-            android:name=".activity.MainActivity"
+            android:name=".activity.LoginActivity"
             android:theme="@style/AppTheme.NoActionBar">
 
 
@@ -25,7 +25,7 @@
 
         </activity>
         <activity
-            android:name=".activity.LoginActivity"
+            android:name=".activity.MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
 
 

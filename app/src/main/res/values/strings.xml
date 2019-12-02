@@ -14,4 +14,17 @@
     <string name="alreadyAccount"><b>Already have an account?</b> </string>
     <string name="singIn"><u> Sing In</u></string>
 
+
+
+    <string name="input_error_name">Name Empty !</string>
+    <string name="input_error_email">Email Empty !</string>
+    <string name="input_error_password">Password Empty !</string>
+    <string name="input_error_conformPassword">Conform Password Empty !</string>
+    <string name="input_error_More6Characters">password would be upto 6 characters !</string>
+    <string name="input_error_image">Please select an Image !</string>
+
+
+
+
+
 </resources>
